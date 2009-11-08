@@ -151,7 +151,7 @@ if __name__ == "__main__":
         Attend(attendanceManager, printerManager, cardStore))
     
     # insecure root
-    iroot = static.File('bootstrap')
+    #iroot = static.File('bootstrap')
 
     # reactor setup
 
@@ -161,7 +161,7 @@ if __name__ == "__main__":
     reactor.listenSSL(10443, server.Site(sroot), \
         secure.ServerContextFactory(myKey='certs/server.pem', trustedCA='certs/certificate_authority/shdh-ca.pem'))
         
-    reactor.listenTCP(10080, server.Site(iroot)) 
+    reactor.listenTCP(10080, server.Site(sroot)) 
     
     log.msg("It's a piece of cake to break a pretty snake. [SYSTEM ONLINE]")
     reactor.run()

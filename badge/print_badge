@@ -48,7 +48,7 @@ CONFIGURATION_FILE = './configuration/print_badge.config.json'
 
 def print_image(file):
   print_file = 'lp -d DYMO_LabelWriter_400_USB_1 -o landscape -o fitplot'.split() + [file]
-  # print_file = 'lp -H test -d DYMO_LabelWriter_400_USB_1 -o landscape -o fitplot'.split() + [file]
+ # print_file = 'lp -H test -d DYMO_LabelWriter_400_USB_1 -o landscape -o fitplot'.split() + [file]
 
   opts, args = getopt.getopt(sys.argv[1:], "n") # "no print"
   if opts and '-n' in opts[0]:

@@ -6,7 +6,7 @@
    },
    "badge" : {
       "height" : 464,
-      "width" : 600,
+      "width" : 599,
       "file" : "badge.png",
       "font_path" : "./configuration/fonts/",
       "remove_accents" : true,
@@ -14,22 +14,23 @@
       "design" : ["background","shdh_number","first_name","last_name","tags","sponsor"]
    },
    "background" : {
-      "file" : "./configuration/background.png",
+      "file" : "./configuration/rhok_banner.png",
       "x" : 0,
       "y" : 0
    },
    "sponsor" : {
       "file" : "./configuration/sponsor.png",
-      "x" : 420,
-      "y" : 324
+      "x" : 0,
+      "y" : 404
    },
    "shdh_number" : {
-      "height" : 110,
-      "width" : 110,
+      "background-color": [0, 0, 0],
+	  "height" : 60,
+      "width" : 60,
       "string" : "42",
       "font" : "MyriadPro-Bold.otf",
       "color" : [255, 255, 255],
-      "x" : 495,
+      "x" : 520,
       "y" : -5
    },
    "first_name" : {

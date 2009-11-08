@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>DevHouse, Welcome</title>
+<title>Random Hacks of Kindness, Welcome</title>
 <style type="text/css">
 body {text-align: center; font-size: 24px; font-family: "Trebuchet MS" Verdana, Arial; color: #606060; background: white;}
 body div div {margin-bottom: 10px;}
@@ -21,7 +21,7 @@ input.text {width: 300px;}
 
 input, textarea {
 	font-family:Arial, Helvetica, sans-serif;
-	color:#404040;
+	color:#231F20;  /*Changed to match logo*/
 }
 label {
 	cursor:pointer;
@@ -35,6 +35,7 @@ label.chosen {color:#333;}
 /*Text inputs*/
 .textinput, .textinputHovered {
 	height:84px;
+	width:700px; /*Changed to center input field*/
 	cursor:pointer;
 	background:url(images/input_bg.gif) repeat-x left top;
 	border:none;
@@ -86,6 +87,7 @@ var WelcomeSystem = {
         email: 'email_form',
         details: 'details_form',
         thanks: 'thanks'
+		
     },
     visiblePanel: '',
 
@@ -290,14 +292,15 @@ Event.observe(window, 'load', function() {
 </script>
 </head>
 <body>
-    <div id="header"><img src="shdh_logo.gif" alt="SHDH" /></div>
+	<!-- Custom Logo -->
+    <div id="header"><img src="rhok_logo.png" alt="RHoK" /></div>
     <form id="email_form" action="#" style="display: none;">
         <div class="pane">
             <div>
-                <label for="email">Unique ID (Email?):</label><br />
+                <label for="email">Unique ID (Email):</label><br />
                 <nobr><img src="images/input_left.gif" alt="" /><input type="text" id="email" value="" class="textinput" autocomplete="off" /><img src="images/input_right.gif" alt="" /></nobr>
             </div>
-            <div><nobr><img src="images/button_left.jpg" alt="" class="buttonImg"/><input type="submit" value="Get this party started!" class="buttonSubmit"/><img src="images/button_right.jpg" alt="" class="buttonImg"/></nobr>
+            <div><nobr><img src="images/button_left.jpg" alt="" class="buttonImg"/><input type="submit" value="Start Hacking Humanity!" class="buttonSubmit"/><img src="images/button_right.jpg" alt="" class="buttonImg"/></nobr>
             </div>
         </div>
     </form>
@@ -321,7 +324,7 @@ Event.observe(window, 'load', function() {
                 </tr>
             </table>
             <div>
-                <label for="tags">Tags / Interests:</label><br />
+                <label for="tags">Tags / Expertise:</label><br />
                 <nobr><img src="images/input_left.gif" alt="" /><input type="text" id="tags" value="" class="textinput" autocomplete="off" /><img src="images/input_right.gif" alt="" /></nobr>
             </div>
             <div>
@@ -330,6 +333,6 @@ Event.observe(window, 'load', function() {
             </div>
         </div>
     </form>
-    <div id="thanks" class="pane" style="display: none;">Thanks for showing up, <span id="moniker">dude</span>!</div>
+    <div id="thanks" class="pane" style="display: none;">Thanks for Hacking Humanity, <span id="moniker">dude</span>! <br><br><br><br><br><br><br><br> Please tag all social data: <b>#RHoK0</b></div>
 </body>
 </html>

@@ -1,4 +1,75 @@
+
+Name Badges for Events - with all the whistles.  
+==========================================
+
+About:
+------
+
+This is a tinyhack to print name badges for events, however it is architected to take over the world (see future work section).  You will need to have a local box at the entrance to your event which will run this locally - so if you don't have reliable internet connection, this is perfect for you (but then you probably aren't hosting a Dev House).  There are two screens that the user inputs data in (should take 20 seconds), then they see a thank you screen while their badge is printed out on the label printer.
+
+The original purpose of the name tag is to meet people, so the first name is the loudest/biggest.  However, we have added tags under the last name, so as you are talking with people, categorize them in your brain accordingly.
+
+The label maker this is currently set up for is the "DYNO LabelWriter 400".
+
+Configuration:
+--------------
+
+For simple configuration, there are two main files to edit for your event: the welcome.html and the print_badge.config.json files.  The former is the input experience for your user and the latter is what gets printed out on the label maker.
+
+First, edit the /static/welcome.html file. The Welcome Screen for your attendees is the email_form:
+* Browser Name of event
+* Custom Logo
+* Text on the Action Button
+
+After your user inputs a unique identifier (hopefully e-mail) and clicks the action button, they will be directed to the next screen asking for First and Last name, as well as Tags (called details_form).  This shouldn't need to be customized.
+
+After it is complete, the user is kicked to a Thank you page (thanks), and you can choose to put in some custom message to your user here.
+
+* "Thanks for" <insert custom text>", $moniker!"
+* You may choose to put a message on this page for the unique social tagging identifier.
+
+The next thing you want to customize is the the layout of the name tag.  In the /badge/configuration/ folder, you will want to put your event_banner.png file as well as your event_sponsor.png file.  Edit the /badge/configuration/print_badge.config.json file to point to your custom event files (in the "file" field of the "background" and "sponsor").
+
+The default size of the banner should be 599px x 60px.  Keep the sponsor logos to 60px height, and adjust the positioning (recommend lower right) as desired by changing the "x" and "y" coordinates in the "sponsor" field.  
+
+You shouldn't have to change the First, Last, or Tag fields - they resize beautifully and work very well.
+
+Please note that the current label maker is in Black and White, so save your images in grey scale to have a better idea what it will look like.
+
+Dependences:
+------------
+
+Ensure your local box has the following programs installed:
+* GD
+* Python GD
+* Twisted
+
+Running the Program:
+--------------------
+
+You'll need to start your server to get started:
+
+$ ./run_event test_names.dat test_event
+$ [enter password]
+
+Get the password from Joel.
+
+Go ahead and check it out on your browser at:
+
+http://localhost:10080
+
+As you input your data, check to ensure that your information has been saved accordingly.  If you haven't hooked up the label printer yet, check the image in the /badge/completed/ folder.  Also, check the rolodex.dat json file it has created in the /data/ folder.
+
+
+Questions:
+----------
+
+Insecure Root vs. Secure Root in the core.py file.  iRoot for testing - overridden in this version.
+
+
+
 Terminology:
+------------
 
 "mothership"
   A machine on the internet that persists visitor information between events.
